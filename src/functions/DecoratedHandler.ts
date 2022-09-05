@@ -1,4 +1,15 @@
-import { IsBoolean, IsEmail, IsEnum, IsHexColor, IsInt, IsSemVer, Max, Min } from 'class-validator'
+import {
+  IsBoolean,
+  IsEmail,
+  IsEnum,
+  IsHexColor,
+  IsInt,
+  IsOptional,
+  IsSemVer,
+  IsString,
+  Max,
+  Min
+} from 'class-validator'
 import { APIGatewayEventDefaultAuthorizerContext, APIGatewayProxyEventBase, Context } from 'aws-lambda'
 import { Body, Ctx, Event, Handler, HttpError, ok, Paths, Queries } from 'aws-lambda-handyman'
 
@@ -21,6 +32,8 @@ class BodyType {
   @IsInt()
   integerNumber: number
 
+  @IsOptional()
+  @IsString()
   optionalParam?: string
 }
 
