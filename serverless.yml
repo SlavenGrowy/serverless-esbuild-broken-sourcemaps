@@ -3,7 +3,7 @@ service: handyman-sls-testx
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs16.x
 
 plugins:
   #  - TODO hotreload not working
@@ -11,12 +11,6 @@ plugins:
   - serverless-offline
 
 functions:
-  TesterOniChan:
-    handler: src/functions/TesterOniChan.handler
-    events:
-      - http:
-          path: /testeronichan
-          method: get
   DecoratedHandler:
     handler: src/functions/DecoratedHandler.handler
     events:

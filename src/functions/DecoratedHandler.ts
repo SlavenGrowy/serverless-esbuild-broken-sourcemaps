@@ -63,13 +63,13 @@ class QueriesType {
 
 class DecoratedHandler {
 
-  @Handler()
+  @Handler({ enableImplicitConversion: true })
   static async handle(@Event() evt: APIGatewayProxyEventBase<APIGatewayEventDefaultAuthorizerContext>,
                       @Ctx() ctx: Context,
                       @Body() body: BodyType,
                       @Paths() paths: PathsType,
                       @Queries() queries: QueriesType) {
-    throw new HttpError('Oopsie Doopsie 🐸', 501)
+    throw new HttpError('Oopsie Doopsie 🐸 👀', 501)
     return ok({ body, paths, queries, evt, ctx })
   }
 
