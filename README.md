@@ -1,30 +1,22 @@
-### Development
-```shell
-npm link aws-lambda-handyman
-```
-
-### Installing sls plugins
 
 
-
+### Install deps
 ```sh
-serverless plugin install -n serverless-plugin-typescript
-
-serverless plugin install -n serverless-offline
+npm i
 ```
 
 
-
-### Starter Project
-
-https://www.serverless.com/examples/aws-node-typescript-rest-api-with-dynamodb
-
-
-### Debugging 
-```json
-     "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+### Run the project
+```text
+npm run local
 ```
-in conjunction with
-```json
-    "local": "SLS_DEBUG=* sls offline start",
+### To debug
+![](./static/debug.png)
+
+
+### To test out the endpoint run:
+```curl
+curl -X POST --location "http://localhost:3009/dev/hello/slavi"
 ```
+
+or run `hello.rest` in root directory

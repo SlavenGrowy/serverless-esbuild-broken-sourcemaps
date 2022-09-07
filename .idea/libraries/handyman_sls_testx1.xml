@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="handyman-sls-testx1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.esbuild/.serverless/handyman-sls-testx.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

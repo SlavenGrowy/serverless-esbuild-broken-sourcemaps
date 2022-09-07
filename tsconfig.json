@@ -1,15 +1,28 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "target": "es2016",
-    "module": "commonjs",
+    "preserveConstEnums": true,
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "outDir": ".build",
+    "outDir": ".xd123",
+    "target": "ES2015",
+//    "module": "ES2015",
+    "module": "CommonJS",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "skipLibCheck": true
-  }
+    "moduleResolution": "node",
+    "lib": [
+      "ES2015"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": "./",
+    "allowJs": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "./src/functions/**/*"
+  ]
 }

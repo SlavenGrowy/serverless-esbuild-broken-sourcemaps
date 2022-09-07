@@ -1,13 +1,13 @@
 service: handyman-sls-testx
 
-
 provider:
   name: aws
   runtime: nodejs16.x
 
 plugins:
   #  - TODO hotreload not working
-  - serverless-plugin-typescript
+  - serverless-esbuild
+#  - serverless-plugin-typescript
   - serverless-offline
 
 functions:
@@ -17,3 +17,13 @@ functions:
       - http:
           path: /decoratedHandler/{farmId}/{deviceId}/{deviceType}
           method: post
+  Hello:
+    handler: src/functions/Hello.handler
+    events:
+      - http:
+          path: /hello/{name}
+          method: post
+
+custom:
+  esbuild:
+    config: './esbuild.config.ts'

@@ -10,7 +10,6 @@ import {
   Max,
   Min
 } from 'class-validator'
-import { APIGatewayEventDefaultAuthorizerContext, APIGatewayProxyEventBase, Context } from 'aws-lambda'
 import { Body, Ctx, Event, Handler, HttpError, ok, Paths, Queries } from 'aws-lambda-handyman'
 
 export enum DeviceType {
@@ -64,12 +63,14 @@ class QueriesType {
 class DecoratedHandler {
 
   @Handler({ enableImplicitConversion: true })
-  static async handle(@Event() evt: APIGatewayProxyEventBase<APIGatewayEventDefaultAuthorizerContext>,
-                      @Ctx() ctx: Context,
+  static async handle(@Event() evt,
+                      @Ctx() ctx,
                       @Body() body: BodyType,
                       @Paths() paths: PathsType,
                       @Queries() queries: QueriesType) {
-    throw new HttpError('Oopsie Doopsie 🐸 👀', 501)
+    // throw new HttpError('Oopsie Doopsie 🐸 👀', 501)
+    const err = new Error(`I'm an error 👽`)
+    console.log(err)
     return ok({ body, paths, queries, evt, ctx })
   }
 
