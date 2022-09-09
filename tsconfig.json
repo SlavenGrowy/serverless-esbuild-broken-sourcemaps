@@ -2,7 +2,7 @@
   "compilerOptions": {
     "preserveConstEnums": true,
     "sourceMap": true,
-    "outDir": ".xd123",
+    "outDir": ".build",
     "target": "ES2015",
 //    "module": "ES2015",
     "module": "CommonJS",
